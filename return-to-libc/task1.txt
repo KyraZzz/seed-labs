@@ -8,3 +8,6 @@ ebp - buffer = 24
 hence system stored in 24 + 4 = 28
       exit stored in RA field in system stack frame 28 + 4 = 32
       argument MYSHELL stored in system argument field in system stack frame 32 + 4 = 36
+
+Attack variation 1: exit() function exsures system function returns properly instead of causing a segmentation fault
+Attack variation 2: if name length of `prtenv` is different from `retlib`, then address of MYSHELL will be different
