@@ -1,0 +1,10 @@
+system: 0xf7e13420
+exit: 0xf7e05f80
+MYSHELL: 0xffffd357
+ebp: 0xffffcc58
+buffer: 0xffffcc40
+ebp - buffer = 24
+
+hence system stored in 24 + 4 = 28
+      exit stored in RA field in system stack frame 28 + 4 = 32
+      argument MYSHELL stored in system argument field in system stack frame 32 + 4 = 36
