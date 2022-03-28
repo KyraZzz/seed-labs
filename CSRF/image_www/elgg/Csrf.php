@@ -66,7 +66,7 @@ class Csrf {
 	 * @throws CsrfException
 	 */
 	public function validate(Request $request) {
-		return; // Added for SEED Labs (disabling the CSRF countermeasure)
+		// return; // Added for SEED Labs (disabling the CSRF countermeasure)
 
 		$token = $request->getParam('__elgg_token');
 		$ts = $request->getParam('__elgg_ts');
