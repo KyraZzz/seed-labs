@@ -14,13 +14,22 @@ function getDB() {
   return $conn;
 }
 
-$input_uname = $_GET['username'];
-$input_pwd = $_GET['Password'];
-$hashed_pwd = sha1($input_pwd);
-
 // create a connection
 $conn = getDB();
 
+// prepared statements
+$stmt = $conn->prepare("SELECT id, name, eid, salary, ssn
+                        FROM credential
+                        WHERE name= ? and Password= ?");
+// bind parameters to query
+$input_uname = $_GET['username'];
+$input_pwd = $_GET['Password'];
+$hashed_pwd = sha1($input_pwd);
+$stmt->bind_param("ss",$input_uname, $hashed_pwd);
+$stmt->execute();
+$stmt->bind_result($id,$name,$eid,$salary,$ssn);
+$stmt->fetch();
+/*
 // do the query
 $result = $conn->query("SELECT id, name, eid, salary, ssn
                         FROM credential
@@ -34,6 +43,7 @@ if ($result->num_rows > 0) {
   $salary = $firstrow["salary"];
   $ssn    = $firstrow["ssn"];
 }
+*/
 
 // close the sql connection
 $conn->close();
