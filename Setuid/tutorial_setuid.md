@@ -53,3 +53,6 @@ $ umask 0007 # rw-rw---- no access for others
 $ sudo chmod 4755 secret.txt
 $ ls -la secret.txt 
 -rwsr-xr-x 1 root root 17 Apr  9 12:36 secret.txt
+
+# find all setuid root programs
+$ find . -user root
