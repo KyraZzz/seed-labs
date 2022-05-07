@@ -1,3 +1,4 @@
+Reference: https://www.ired.team/offensive-security/code-injection-process-injection/binary-exploitation/64-bit-stack-based-buffer-overflow
 ok...now the buffer size is extremely so we cannot put the shellcode inside the buffer, 
 but use the environment variable approach
 
