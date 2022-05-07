@@ -1,5 +1,4 @@
-#include <stdlib.h>
-void main(){
+int main(){
     system("ls");
-    // execve("ls",NULL,NULL);
+    return 0;
 }

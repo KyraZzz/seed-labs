@@ -1,0 +1,5 @@
+(1) set `mysystem.c` as a setuid root program
+(2) $ cp /bin/sh ./ls
+(3) Original path: PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+(4) set PATH=.:$PATH (badfile in the current directory)
+(5) not sure why, but can only get a normal shell
