@@ -1,0 +1,8 @@
+1. Turn on the countermeasure /bin/dash
+$ sudo ln -sf /bin/dash /bin/sh
+$ ls -l /bin/sh /bin/zsh /bin/dash
+-rwxr-xr-x 1 root root 129816 Jul 18  2019 /bin/dash
+lrwxrwxrwx 1 root root      9 May  7 18:54 /bin/sh -> /bin/dash
+-rwxr-xr-x 1 root root 878288 Mar 11 16:38 /bin/zsh
+
+2. prepend instructions `setuid(0)` to the shellcode
